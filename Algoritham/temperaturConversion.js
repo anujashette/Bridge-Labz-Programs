@@ -1,6 +1,24 @@
 
+/******************************************************************************
+ *  Compilation:  csc.exe /t:exe /out: node temperatureCoversion.js
+ *  Execution:    node temperatureCoversion.js
+ *  
+ *  Purpose:    Calculate given the temperature in fahrenheit as input outputs the temperature 
+ *              in Celsius or viceversa using the formula
+ * 
+ *  @author  Anuja Shette
+ *  @version 8.10.0
+ *  @since   10-06-2019
+ *
+ ******************************************************************************/
 var F=0,C=0
 var no=0
+
+/*
+    User can give choice to in which unit he/she wants to convert  the temperature.
+
+*/ 
+
 class util{
 
     static checkstatic()

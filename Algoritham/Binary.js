@@ -31,9 +31,9 @@ if (bit.length < 8) {
     console.log('converted decimal to binary', (bit = '0' + bit));
     high = bit.length - 1
 
-/*
-    Middle is find to nibble i.e.(two nibbles are (0110) and (0100))
-*/
+    /*
+        Middle is find to nibble i.e.(two nibbles are (0110) and (0100))
+    */
     mid = Math.floor((hihg + low) / 2)
 
     for (var i = low; i <= mid; i++) {

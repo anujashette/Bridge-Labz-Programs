@@ -1,33 +1,47 @@
-var stop = 0, elapsed = 0
-var syart=0
+/******************************************************************************
+ *  Compilation:  csc.exe /t:exe /out: node ExportDemo.js
+ *  Execution:    node ExportDemo.js
+ *  
+ *  Purpose:    find the prime numbers that are Anagram and Palindrome.
+ *              Binary search,Bubble sort,insertion sort.
+ *              Import utility file.
+ *
+ *  @author  Anuja Shette
+ *  @version 1.0
+ *  @since   05-06-2019
+ *
+ ******************************************************************************/
 
-function startM()
-{
+ /*
+    Stop watch to calculate elapsed Time for every method call.
+ */
+
+var stop = 0, elapsed = 0
+var start = 0
+
+function startM() {
     start = Date.now();
     console.log("start time=" + start);
 }
 
-function stopM()
-{
+function stopM() {
     stop = Date.now();
     console.log("stop time=" + stop);
     elapsed = stop - start;
-    console.log("elapsed time=" + elapsed+'ms');
+    console.log("elapsed time=" + elapsed + 'ms');
 }
 
 var ref = require(`./Utility`)
 
-
-console.log('******************************************prime no which is palindrome******************************************')
+console.log('******************************************prime no which are palindrome******************************************')
 
 var arr = ref.method.primeNo()
-
 
 for (let i of arr) {
     ref.method.Palindrome(i)
 }
 
-console.log('Prime no which is anagram')
+console.log('******************************************Prime no which are anagram******************************************')
 
 for (var i = 0; i <= arr.length; i++) {
     for (var j = i + 1; j < arr.length; j++) {
@@ -35,78 +49,73 @@ for (var i = 0; i <= arr.length; i++) {
     }
 }
 
-
-
 // console.log(`******************************************Binary Search******************************************`)
 
-// var n=require(`readline-sync`).question('Enter length:')
-// var array=new Array()
-// for(var i=0;i<n;i++)
-// {
-//     array[i]=require(`readline-sync`).question('Enter array:')
+var n=require(`readline-sync`).question('Enter length:')
+var array = new Array()
+for (var i = 0; i < n; i++) {
+    array[i] = require(`readline-sync`).question('Enter array:')
+}
 
-// }
+var key = require(`readline-sync`).question('Enter value to search:')
 
-//     var key = require(`readline-sync`).question('Enter value to search:')
-    
-//     startM()
+startM()
+ref.method.binarySearch(array, key)
+stopM()
 
-//     ref.method.binarySearch(array,key)
+console.log('******************************************Bubble sorting******************************************')
 
-//     stopM()
+var n = require(`readline-sync`).question('Enter length:')
+var array = new Array()
+for (var i = 0; i < n; i++) {
+    array[i] = require(`readline-sync`).question('Enter array:')
+}
 
-// console.log('******************************************Bubble sorting******************************************')   
+startM()
+ref.method.IntBubbleSort(array)
+stopM()
 
-// var n=require(`readline-sync`).question('Enter length:')
-// var array=new Array()
-// for(var i=0;i<n;i++)
-// {
-//     array[i]=require(`readline-sync`).question('Enter array:')
+console.log('******************************************Insertion sorting******************************************')
 
-// }
-// startM()
-// ref.method.IntBubbleSort(array)
-// stopM()
+var n = require(`readline-sync`).question('Enter length:')
+var array = new Array()
+for (var i = 0; i < n; i++) {
+    array[i] = require(`readline-sync`).question('Enter array:')
 
-// console.log('******************************************Insertion sorting******************************************')
-
-// var n=require(`readline-sync`).question('Enter length:')
-// var array=new Array()
-// for(var i=0;i<n;i++)
-// {
-//     array[i]=require(`readline-sync`).question('Enter array:')
-
-// }
-// startM()
-// ref.method.IntInsertionSort(array)
-// stopM()
+}
+startM()
+ref.method.IntInsertionSort(array)
+stopM()
 
 
 
-// console.log(`******************************************Binary Search String******************************************`)
-//     var va = require(`readline-sync`).question('Enter String:')
-//     var arr = va.toLowerCase().split(' ').sort()
-//     var key = require(`readline-sync`).question('Enter value to search:')
+console.log(`******************************************Binary Search String******************************************`)
 
-// startM()
+var va = require(`readline-sync`).question('Enter String:')
+var arr = va.toLowerCase().split(' ').sort()
+var key = require(`readline-sync`).question('Enter value to search:')
 
-// ref.method.BinarySearchStriing(arr,key)
+startM()
+ref.method.BinarySearchStriing(arr, key)
+stopM()
 
-// stopM()
+console.log('******************************************Bubble Sort String******************************************')
 
-// console.log('******************************************Bubble Sort String******************************************')
-// var n = require(`readline-sync`).question('Enter String')
-// startM()
-// var bubblesort=ref.method.BubbleSortString(n)
-// console.log(bubblesort.join(' '))
-// stopM()
+var n = require(`readline-sync`).question('Enter String')
 
-// console.log('******************************************Insertion Sort String******************************************')
-// var n = require(`readline-sync`).question('Enter String:')
-// var arr = n.toLowerCase().split(' ')
-// startM()
-// console.log(ref.method.InsertionSortString(arr))
-// stopM()
+startM()
+var bubblesort = ref.method.BubbleSortString(n)
+console.log(bubblesort.join(' '))
+stopM()
+
+console.log('******************************************Insertion Sort String******************************************')
+
+var n = require(`readline-sync`).question('Enter String:')
+var arr = n.toLowerCase().split(' ')
+
+startM()
+console.log(ref.method.InsertionSortString(arr))
+stopM()
 
 
 

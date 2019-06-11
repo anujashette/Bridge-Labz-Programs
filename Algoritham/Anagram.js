@@ -1,5 +1,5 @@
 /******************************************************************************
- *  Compilation:  csc.exe /t:exe /out: tsc binary.ts
+ *  Compilation:  csc.exe /t:exe /out: node Anagram.js
  *  Execution:    node Anagram.js
  *  
  *  Purpose:     One string is an anagram of another if the second is simply a 
@@ -34,6 +34,10 @@ else {
     console.log('Strings are not anagram')
 }
 
+
+/*
+   Doing sorting of both string.
+*/
 function sort(str) {
     var Lowercase = str.toLowerCase()
     var arr = Lowercase.split('')
@@ -50,6 +54,11 @@ function sort(str) {
     }
     return arr.toString()
 }
+
+/*
+    Comparing strings if both string contains same letter then they are anagram
+    otherwise not anagram
+*/
 
 function compare(s1, s2) {
     var flag = 'Strings are not anagram'

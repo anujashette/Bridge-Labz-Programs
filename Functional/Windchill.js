@@ -42,7 +42,4 @@ function WindCalculate(t, v) {
     else {
         console.log(`Temperature must be less than 50 and wind speed between 3 to 120`);
     }
-
-
-
 }
