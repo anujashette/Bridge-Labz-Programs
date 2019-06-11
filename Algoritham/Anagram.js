@@ -1,8 +1,24 @@
+/******************************************************************************
+ *  Compilation:  csc.exe /t:exe /out: tsc binary.ts
+ *  Execution:    node Anagram.js
+ *  
+ *  Purpose:     One string is an anagram of another if the second is simply a 
+ *               rearrangement of the first. For example, 'heart' and 'earth' are anagrams.
+ *
+ *  @author  Anuja Shette
+ *  @version 1.0
+ *  @since   05-06-2019
+ *
+ ******************************************************************************/
+
 var read = require(`readline-sync`)
 var str1 = read.question('Enter first String :')
 var str2 = read.question('Enter second string :')
 
-
+/*
+    Firstly check length of both string is equal or not.
+    If length is not equal then Strings are not anagram.
+*/
 
 if (str1.length == str2.length) {
     var s1 = sort(str1)
@@ -15,7 +31,7 @@ if (str1.length == str2.length) {
 }
 
 else {
-    console.log('String is not anagram')
+    console.log('Strings are not anagram')
 }
 
 function sort(str) {
@@ -36,20 +52,20 @@ function sort(str) {
 }
 
 function compare(s1, s2) {
-    var flag = 'String is not anagram'
+    var flag = 'Strings are not anagram'
     for (var i = 0; i < s1.length; i++) {
 
         if (s1.charAt(i) != s2.charAt(i)) {
-            flag = 'String is not anagram'
+            flag = 'Strings are not anagram'
             return flag
         }
         else {
-            flag = 'String is anagram'
+            flag = 'Strings are anagram'
         }
 
     }
 
-    if (flag == 'String is anagram') {
+    if (flag == 'Strings are anagram') {
         return flag
     }
 

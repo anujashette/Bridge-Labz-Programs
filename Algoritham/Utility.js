@@ -1,7 +1,7 @@
 exports.method =
     {
        anagram: function (st1,st2) {
-             console.log('anagram')
+            //  console.log('anagram')
 
                 var str1 = st1.toString()
                 var str2 = st2.toString()
@@ -87,7 +87,6 @@ exports.method =
                     index++
                 }
 
-
             }
             return arr
 
@@ -95,7 +94,7 @@ exports.method =
 
 
         Palindrome: function (no) {
-            console.log('Palindrome')
+            // console.log('Palindrome')
 
 
             var temp = no

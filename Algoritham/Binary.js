@@ -1,7 +1,7 @@
 
 /******************************************************************************
- *  Compilation:  csc.exe /t:exe /out: tsc binary.ts
- *  Execution:    node demo.js
+ *  Compilation:  csc.exe /t:exe /out: node Binary.js
+ *  Execution:    node Binary.js
  *  
  *  Purpose:     convert decimal to Binary using toBinary function and perform the
  *               following functions. i. Swap nibbles and find the new number.

@@ -18,22 +18,22 @@ function stopM()
 var ref = require(`./Utility`)
 
 
-// console.log('******************************************prime no which is palindrome******************************************')
+console.log('******************************************prime no which is palindrome******************************************')
 
-// var arr = ref.method.primeNo()
+var arr = ref.method.primeNo()
 
 
-// for (let i of arr) {
-//     ref.method.Palindrome(i)
-// }
+for (let i of arr) {
+    ref.method.Palindrome(i)
+}
 
-// console.log('Prime no which is anagram')
+console.log('Prime no which is anagram')
 
-// for (var i = 0; i <= arr.length; i++) {
-//     for (var j = i + 1; j < arr.length; j++) {
-//         ref.method.anagram(arr[i], arr[j])
-//     }
-// }
+for (var i = 0; i <= arr.length; i++) {
+    for (var j = i + 1; j < arr.length; j++) {
+        ref.method.anagram(arr[i], arr[j])
+    }
+}
 
 
 
