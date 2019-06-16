@@ -13,6 +13,7 @@ exports.method =
                 var result = compare(s1, s2)
                 if (result == 'String is anagram') {
                     console.log(result)
+                    console.log(str1, ' ', str2)
 
                 }
             }
@@ -53,7 +54,7 @@ exports.method =
                 }
 
                 if (flag == 'String is anagram') {
-                    console.log(s1, ' ', s2)
+                    
                     return flag
                 }
 

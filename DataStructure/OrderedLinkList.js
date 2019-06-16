@@ -1,5 +1,21 @@
+
+/******************************************************************************
+ *  Compilation:  csc.exe /t:exe /out: node OrderedLinkList.js
+ *  Execution:    node OrderedLinkList.js
+ *  
+ *  Purpose:     Read .a List of Numbers from a file and arrange it ascending 
+ *               Order in a Linked List. Take user input for a number, if found 
+ *               then pop the number out of the list else insert the number in 
+ *               appropriate position
+ *
+ *  @author  Anuja Shette
+ *  @version 8.10.0
+ *  @since   14-06-2019
+ * 
+ ******************************************************************************/
+
 function LinkedList() {
-    this.head = null
+this.head = null
 }
 
 /* Takes input word from file into array and passes to add(data) function.
