@@ -36,7 +36,6 @@ LinkedList.prototype.add = function (data) {
     
 }
 
-
 // get() function can dislay list of items.
 LinkedList.prototype.get = function () {
     output = ''
@@ -49,7 +48,7 @@ LinkedList.prototype.get = function () {
     return output
 }
 
-
+// Object creation
 var stack = new LinkedList()
 for(var i=0; i<anagarm.length;i++)
 {
