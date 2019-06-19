@@ -35,7 +35,6 @@ var expression = '(5+6)∗(7+8)/(4+3)(5+6)∗(7+8)/(4+3)'
 for (var i = 0; i < expression.length; i++) {
     if (expression.charAt(i) == '(' || expression.charAt(i) == '[' || expression.charAt(i) == '{') {
         bt.push(expression.charAt(i))
-
     }
     else if (expression.charAt(i) == ')' || expression.charAt(i) == ']' || expression.charAt(i) == '}') {
         switch (expression.charAt(i)) {
@@ -53,12 +52,8 @@ for (var i = 0; i < expression.length; i++) {
                 bt.pop();
             }
                 break;
-
         }
-
     }
-
-
 }
 
 if (bt.isEmpty()) {

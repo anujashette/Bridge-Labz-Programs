@@ -17,6 +17,8 @@ var r=10,c=100,j=0,no=0
 var max =0
 var TempArray = []
 var Twoarray=new Array(r)
+var extraArray=[];
+var index1=0
 
 
  function primeNo() {
@@ -36,27 +38,29 @@ var Twoarray=new Array(r)
         if (counter == 2) {
             
             array[index] = no
+            extraArray[index1]=no
             index++
+            index1++
         }
     }
-  
+    
     return array
 }
 
 function Dimension()
 {
-    TempArray=primeNo();
+    
     for (var i = 0; i < r; i++) {
         Twoarray[i] = new Array(r)
     }
     for (var i = 0; i < r; i++) {
-
+        TempArray=primeNo();
         for (j = 0; j < TempArray.length; j++) {
             Twoarray[i][j]=TempArray[j]
 
         }
         
-        TempArray=primeNo();
+       
     }
 }
 
@@ -80,7 +84,4 @@ function displayBoard(board){
     console.log(buffer);
  }
 
-
-// var ref = require('../Utility/PrimeTwoD')
-
-// ref.util.primeTwo();
+module.exports.extraArray = extraArray;
