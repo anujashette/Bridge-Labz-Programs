@@ -1,37 +1,38 @@
-// // var re = /(\w+)\s(\w+)/;
-// // var str = 'John Smith';
-// // var newstr = str.replace(re, '$1, $1');
-// // console.log(newstr);
+var str='56';
+var str1='anuja';
+var letter = /[:alpha:]+/
+
+// var letter = /[0-9]{1}/g
+if(str.match(letter))
+{
+  console.log('true')
+}
+
+// // add data into file
+// var fs = require('fs')
+// fs.writeFileSync('newfile.json', '[]', function (err) {
+//   if (err) throw err;
+//   console.log('File is created successfully.');
+// }); 
+
+// var file = fs.readFileSync('newfile.json')
+// file=JSON.parse(file)
 
 
-// var text = 'Образец text на русском языке';
-// var regex = /[\u0400-\u04FF]+/g;
+//  var obj ={ name:require('readline-sync').question('enter middle name:'),
+//  price:require('readline-sync').question('enter middle name:')}
 
-// var match = regex.exec(text);
-// console.log(match[0]);        // logs 'Образец'
-// console.log(regex.lastIndex); // logs '7'
+//  file.push(obj)
 
-// var match2 = regex.exec(text);
-// console.log(match2[0]);       // logs 'на' [did not log 'text']
-// console.log(regex.lastIndex); // logs '15'
-const express = require('express')
-const app = express()
+// // file.details[0].mname = require('readline-sync').question('enter middle name:')
 
-app.use(express.json())
+// file = JSON.stringify(file)
+// fs.writeFileSync('newfile.json',file)
 
-app.post('/form', (req, res) => {
-  const name  = req.body.name
-  const email = req.body.email
-  const age   = req.body.age
-})
+// // console.log(file[0].name)
 
-const { check } = require('express-validator/check');
-app.post('/form', [
-    check('name').isLength({ min: 3 }),
-    check('email').isEmail(),
-    check('age').isNumeric()
-  ], (req, res) => {
-    const name  = req.body.name
-    const email = req.body.email
-    const age   = req.body.age
-  })
+
+// // var fs = require('fs');
+ 
+// // writeFile function with filename, content and callback function
+
