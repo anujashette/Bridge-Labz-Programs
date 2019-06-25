@@ -14,11 +14,27 @@
 var fs = require("fs");
 var value = 0
 
-// JSON file reading
-var content = fs.readFileSync("Product.json");
+    // JSON file reading
+    var content = fs.readFileSync("Product.json");
+    var flag = false
+    // Parsing JSON oject into string.
+    content = JSON.parse(content)
 
-// Parsing JSON oject into string.
-content = JSON.parse(content)
+// Getting details from JSON to calculate total price.
+
+    for (var i = 0; i < 3; i++) {
+        var weight = require('readline-sync').question('\nEnter weight in Kg to buy ' + content.inventory.rice[i].name + ' ');
+        calculate(content.inventory.rice[i].name, weight, content.inventory.rice[i].price)
+    
+        weight = require('readline-sync').question('\nEnter weight in Kg to buy ' + content.inventory.wheat[i].name + ' ');
+        calculate(content.inventory.wheat[i].name, weight, content.inventory.wheat[i].price)
+    
+        weight = require('readline-sync').question('\nEnter weight in Kg to buy ' + content.inventory.pulses[i].name + ' ');
+        calculate(content.inventory.pulses[i].name, weight, content.inventory.pulses[i].price)
+        flag = true
+        return flag;
+    }
+
 
 // calculating price for total weight.
 function calculate(name, weight, pkg) {
@@ -28,23 +44,3 @@ function calculate(name, weight, pkg) {
     return value;
 }
 
-// Getting details from JSON to calculate total price.
-for (var i = 0; i < 3; i++) {
-    var weight = require('readline-sync').question('\nEnter weight in Kg to buy ' + content.inventory.rice[i].name + ' ');
-    calculate(content.inventory.rice[i].name, weight, content.inventory.rice[i].price)
-
-    weight = require('readline-sync').question('\nEnter weight in Kg to buy ' + content.inventory.wheat[i].name + ' ');
-    calculate(content.inventory.wheat[i].name, weight, content.inventory.wheat[i].price)
-
-    weight = require('readline-sync').question('\nEnter weight in Kg to buy ' + content.inventory.pulses[i].name + ' ');
-    calculate(content.inventory.pulses[i].name, weight, content.inventory.pulses[i].price)
-}
-
-
-
-// console.log(" \n"+ content.inventory.rice[0].name);
-// console.log(" \n"+ content.inventory.rice[0].price);
-// console.log(" \n"+ content.inventory.wheat[0].name);
-// console.log(" \n"+ content.inventory.wheat[0].price);
-// console.log(" \n"+ content.inventory.pulses[1].name);
-// console.log(" \n"+ content.inventory.pulses[1].price);

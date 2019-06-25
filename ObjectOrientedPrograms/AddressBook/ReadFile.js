@@ -6,6 +6,7 @@ exports.fileOperation={
         var json = fs.readFileSync(fileName + '.json')
         json = JSON.parse(json)
 
+        //  Reading records index by index.
         console.log('\n\tADDRESS BOOK DETAILS\t')
         for(var i=0; i<json.length;i++)
         {   
@@ -18,6 +19,7 @@ exports.fileOperation={
             console.log('\tZip Code:\t',json[i].zip)
             console.log('\tPhone No:\t',json[i].phoneno)
         }
-
+        console.log('Details displayed successfully')
+        return json[0].firstname
     }
 }

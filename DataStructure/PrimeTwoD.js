@@ -59,8 +59,6 @@ function Dimension()
             Twoarray[i][j]=TempArray[j]
 
         }
-        
-       
     }
 }
 

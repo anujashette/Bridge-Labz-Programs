@@ -31,6 +31,7 @@ for(var i=0;i<r;i++)
 {
     array[i]=new Array(r)
 }
+
 for(var i=0;i<r;i++)
 {
     for(var j=0;j<c;j++)

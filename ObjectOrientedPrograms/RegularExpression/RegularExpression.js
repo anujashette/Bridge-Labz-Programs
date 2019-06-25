@@ -37,7 +37,7 @@ else
 {
     console.log('enter 10 digit no',mobileNo.length)
 }   
-expression = expression.replace("1/3/2015",date)
+expression = expression.replace("XX/XX/XXXX",date)
 console.log(expression)
 
 // Again write into file

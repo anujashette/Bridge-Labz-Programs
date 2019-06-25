@@ -5,6 +5,7 @@ exports.fileOperation={
     {
         var flag=0
         var i=0
+        var temp =false
         search(fileName);
 
        function search(fileName)
@@ -14,6 +15,7 @@ exports.fileOperation={
     
             var item = require('readline-sync').question('\n Enter first name want to be search:')
     
+            //   Searching perticular record from file.
             for( i=0;i<json.length;i++)
             {
                 if(item == json[i].firstname || item == json[i].lastname)
@@ -26,8 +28,9 @@ exports.fileOperation={
                     console.log('\tState:\t\t',json[i].state)
                     console.log('\tZip Code:\t',json[i].zip)
                     console.log('\tPhone No:\t',json[i].phoneno)
-    
-                     flag = require('readline-sync').question('\n You want to search again \n then enter 1 or \n To remove searched record enter any no:')
+                    temp =true
+                    //  If user want to continue searching then he/she will enter 1 or enter any other no 
+                    flag = require('readline-sync').question('\n You want to search again \n then enter 1 or enter any no')
     
                     if(flag == 1)
                     {
@@ -39,18 +42,13 @@ exports.fileOperation={
                     }
                 }
                 else
-
                 {
                     console.log('Record not found in details...')
                 }
-    
             }
-    
         }
-       if(flag == 1)
-            return i;
-       else
-            return 'not found'     
+   
+       return temp  
     }
 
 }

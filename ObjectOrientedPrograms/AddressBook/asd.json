@@ -1,2 +1,38 @@
-[{"firstname":"auja","lastname":"asd","address":"Plot.n.05,trada naka","city":"nanded","state":"mh","zip":"768597","phoneno":"8483964497"},
-    {"firstname":"ankit","lastname":"chidrawar","address":"Plot.n.02, sidko","city":"nanded","state":"mh","zip":"768597","phoneno":"8483964497"}]
+[
+  {
+    "firstname": "shette",
+    "lastname": "maha",
+    "address": "taroda naka",
+    "city": "nanded",
+    "state": "Karnataka",
+    "zip": "454545",
+    "phoneno": "875643879"
+  },
+  {
+    "firstname": "katal",
+    "lastname": "apek",
+    "address": "Plot.n.02, cidco",
+    "city": "pune",
+    "state": "mh",
+    "zip": "745385",
+    "phoneno": "8483964497"
+  },
+  {
+    "firstname": "zeenat",
+    "lastname": "shette",
+    "address": "vashi",
+    "city": "mumbai",
+    "state": "Mh",
+    "zip": "767676",
+    "phoneno": "7676767676"
+  },
+  {
+    "firstname": "ankit",
+    "lastname": "chidrawar",
+    "address": "Plot.n.02, sidko",
+    "city": "nanded",
+    "state": "mh",
+    "zip": "768597",
+    "phoneno": "8483964497"
+  }
+]

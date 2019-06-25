@@ -1,8 +1,8 @@
-
 var fs = require('fs')
-var json = fs.readFileSync('stockDetails.json')
+var json = fs.readFileSync('/home/admin1/AnujaShette/Node Programs/ObjectOrientedPrograms/Inventory/stockDetails.json')
 json = JSON.parse(json)
 
+try{
 do {
     console.log('\t------------------------------------------------------------------')
 
@@ -25,6 +25,11 @@ do {
     }
 
 } while (choice != '0');
+}
+catch(e)
+{
+    console.log(e)
+}
 
 // Calculate total value of each Stock.
 function calculate(weight, pkg) {
@@ -100,10 +105,17 @@ function update() {
                 console.log('Enter  1.Arborio  2.Basmati  3.Brown')
                 item = require('readline-sync').question('Enter choice:')
                 p = parseInt(require('readline-sync').question('Enter updated price:'))
-
-                json.inventory.rice[item - 1].price = p
-                write(json)
-
+                
+                if(Number.isInteger(p))
+                {
+                    json.inventory.rice[item - 1].price = p
+                    write(json)    
+                }
+                else
+                {
+                    console.log('**********Enter number only***********')
+                }
+               
                 break;
 
             case '2':
@@ -111,9 +123,17 @@ function update() {
                 console.log('Enter  1.Spelt  2.White  3.Simple')
                 item = require('readline-sync').question('Enter choice:')
                 p = parseInt(require('readline-sync').question('Enter updated price:'))
-
-                json.inventory.wheat[item - 1].price = p
-                write(json)
+                
+                if(Number.isInteger(p))
+                {
+                    json.inventory.wheat[item - 1].price = p
+                    write(json) 
+                }
+                else
+                {
+                    console.log('**********Enter number only***********')
+                }
+               
 
                 break;
 
@@ -123,14 +143,23 @@ function update() {
                 item = require('readline-sync').question('Enter choice:')
                 p = parseInt(require('readline-sync').question('Enter updated price:'))
 
-                json.inventory.pulses[item - 1].price = p
-                write(json)
+                if(Number.isInteger(p))
+                {
+                    json.inventory.pulses[item - 1].price = p
+                    write(json) 
+                }
+                else
+                {
+                    console.log('**********Enter number only***********')
+                }
+               
                 break;
 
             case '0': console.log('Thank you. Visit again...\n')
                 break;
         }
     } while (choice != '0');
+    return p;
 }
 
 function add()
@@ -160,12 +189,12 @@ function addItems(name, price, path) {
 
 function write(json) {
     json = JSON.stringify(json)
-    fs.writeFileSync('stockDetails.json', json)
+    fs.writeFileSync('/home/admin1/AnujaShette/Node Programs/ObjectOrientedPrograms/Inventory/stockDetails.json', json)
 }
 
 function remove()
 {
-    json = fs.readFileSync('stockDetails.json')
+    json = fs.readFileSync('/home/admin1/AnujaShette/Node Programs/ObjectOrientedPrograms/Inventory/stockDetails.json')
     json = JSON.parse(json)
 
     var item = require('readline-sync').question('\n Enter item name want to be delete:')
@@ -180,3 +209,6 @@ function remove()
     }
     write(json)
 }
+
+
+module.exports={update}

@@ -1,15 +1,15 @@
-var str='56';
-var str1='anuja';
-var letter = /[:alpha:]+/
+// var str='56';
+// var str1='anuja';
+// var letter = /[:alpha:]+/
 
-// var letter = /[0-9]{1}/g
-if(str.match(letter))
-{
-  console.log('true')
-}
+// // var letter = /[0-9]{1}/g
+// if(str.match(letter))
+// {
+//   console.log('true')
+// }
 
 // // add data into file
-// var fs = require('fs')
+var fs = require('fs')
 // fs.writeFileSync('newfile.json', '[]', function (err) {
 //   if (err) throw err;
 //   console.log('File is created successfully.');
@@ -36,3 +36,18 @@ if(str.match(letter))
  
 // // writeFile function with filename, content and callback function
 
+json = fs.readFileSync('jsondemo.json')
+    json = JSON.parse(json)
+
+    var item = require('readline-sync').question('\n Enter item name want to be delete:')
+
+    for(var i=0;i<json.length;i++)
+    {
+        if(item == json[i].name)
+        {
+            json.splice(i,1)
+        }
+        console.log(json[i])
+    }
+    json = JSON.stringify(json)
+    fs.writeFileSync('jsondemo.json', json)

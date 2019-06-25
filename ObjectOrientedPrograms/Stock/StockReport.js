@@ -14,7 +14,7 @@
  ******************************************************************************/
 
 var fs = require('fs')
-var json = fs.readFileSync('stock.json')
+var json = fs.readFileSync('/home/admin1/AnujaShette/Node Programs/ObjectOrientedPrograms/Stock/stock.json')
 json = JSON.parse(json)
 var invest=[]
 var totalInvest = 0
@@ -46,6 +46,7 @@ display(calculateReport())
 //total value of Stock.
 console.log('Total investment: '+totalInvest+' $')
 
-// exports.report={
-
-// }
+exports.name=json.stock[0].name;
+exports.shares=json.stock[0].noofshare
+exports.price=json.stock[0].shareprice
+exports.invest=invest[0]
