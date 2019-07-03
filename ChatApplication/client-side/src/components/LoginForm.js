@@ -108,7 +108,7 @@ class LoginForm extends React.Component {
 
                 <TextValidator
                     label="Password"
-                    onChange={this.handleChange}
+                    onChange={this.handleChangeP}
                     name="password"
                     value={this.state.password}
                     validators={['required']}
