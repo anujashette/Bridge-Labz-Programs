@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const config = require('../../config/database.config.js')
 
 const UserSchema = mongoose.Schema({
     email: {
@@ -26,7 +27,6 @@ var User = mongoose.model('User', UserSchema);
 
 exports.registration = (userdata, callback) => {
 
-
     User.find({ "email": userdata.email }, (error, data) => {
         if (error) {
             console.log('Error in registration process:', error)
@@ -51,6 +51,22 @@ exports.registration = (userdata, callback) => {
                         } else {
                             console.log("save successfully ", result)
                           
+                            const payload = {
+                                user : {
+                                    id:user.id
+                                }
+                            };
+
+                            jwt.sign(
+                                payload,
+                                config.jwtsecret,
+                                {expiresIn:36000},
+                                (err,token) =>{
+                                    console.log('token',token)
+                                    if (err) return err;
+                                    res.json({token})
+                                }
+                            )
                             return callback(null, result)
                         }
                     })
