@@ -16,6 +16,7 @@ app.use(bodyParser.json())
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
 }).then(() => {
+    
     console.log("Successfully connected to the database");    
 }).catch(err => {
     console.log('Could not connect to the database. Exiting now...', err);
@@ -27,7 +28,7 @@ app.get('/',(req,res)=>{
     res.json({"message": "Welcome to chat application."});
 })
 
-require('./app/routes/chat.routes.js')(app);
+require('./app/routes/user.routes.js')(app);
 // Port is listening 
 
 app.listen(3000,()=>{

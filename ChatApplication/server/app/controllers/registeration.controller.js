@@ -1,7 +1,6 @@
 const Validator = require("validator");
 const service = require("../services/services")
 
-
 // Create and Save a new Note
 exports.registration = (req, res) => {
      
@@ -31,7 +30,7 @@ exports.registration = (req, res) => {
                                 console.log("register",req.body)
                                 if (error) {
                                         return res.status(500).send({
-                                                message: error.message || "Some error occurred while creating the user."
+                                                message: error || "Some error occurred while creating the user."
                                         });
                                 }
                                 else {
