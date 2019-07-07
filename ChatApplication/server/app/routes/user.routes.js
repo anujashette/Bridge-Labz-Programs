@@ -2,7 +2,7 @@ module.exports = (app) => {
     const usercrtR = require('../controllers/registeration.controller.js');
     const usercrtL = require('../controllers/login.controller.js');
    const usercrtV = require('../middleware/TokenVerify.js');
-   const confirm = require('../middleware/confirmed');
+   const confirm = require('../controllers/confirm.controller');
 
 
 //    @route    post api/ auth
@@ -16,9 +16,9 @@ module.exports = (app) => {
     app.post('/user/login', usercrtL.login);
 
     //token verification
-    app.post('/', usercrtV.verifytoken)
+    // app.post('/', usercrtV.verifytoken)
 
-    app.post('/user/confirmed',confirm.confimed)
+    app.get('/user/confirmed/:token',confirm.confimed)
 
      
 }

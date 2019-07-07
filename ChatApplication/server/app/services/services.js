@@ -39,3 +39,11 @@ exports.login = (userdata,callback) => {
         callback.send(error)
     }
 }
+
+exports.verify=(decoded,callback) =>
+{
+    usermodel.verify(decoded,(error,confirmation) =>{
+        if(error) return callback(error)
+        callback(confirmation)
+    })
+}

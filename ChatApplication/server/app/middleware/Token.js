@@ -3,12 +3,13 @@ const jwt = require('jsonwebtoken')
 
 exports.genToken = (userdata,callback) => {
 
-    username=userdata.username
+    // var username=userdata.username
+    // var id=userdata.id
     const payload = {
-            user : {
+           
                 id:userdata.id,
                 username:userdata.username
-            }
+            
         };
         jwt.sign(
             payload,
@@ -19,9 +20,11 @@ exports.genToken = (userdata,callback) => {
             (err, token) => {
                 console.log(token)
                 if (err) return callback(err)
-                return callback(null,{token : token,
-                username
-               })
+                return callback(null,{token:token}
+                //     {token : token,
+                //    id:id, username:username
+                // }
+                )
             }
           );
 }

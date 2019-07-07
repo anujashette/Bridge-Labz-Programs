@@ -3,7 +3,6 @@ const bcrypt = require('bcryptjs')
 const newToken = require('../middleware/Token')
 const sendMail = require('../middleware/NodeMailer')
 const sendmail = new sendMail();
-const url = 'http://localhost:3000/user/confirmed'
 
 const UserSchema = mongoose.Schema({
     email: {
@@ -32,7 +31,7 @@ function userModel() {
 }
 
 userModel.prototype.registration = (userdata, callback) => {
-
+let token = ''
     User.find({ "email": userdata.email }, (error, data) => {
         if (error) {
             console.log('Error in registration process:', error)
@@ -40,6 +39,7 @@ userModel.prototype.registration = (userdata, callback) => {
         }
         else {
             if(data != ''){
+
                 console.log('user exist')
                 return callback('User with email id already exist...')
             }
@@ -61,10 +61,15 @@ userModel.prototype.registration = (userdata, callback) => {
                         if (error) {
                             return callback(error)
                         } else {
-                            console.log("save successfully ", result)
-                            sendmail.mailer(url,user.email ,user.id);
-                                return callback(null, result)
-                            
+                            // console.log("save successfully dataaaaaaaaaaaa", user.id)
+                            newToken.genToken(user, (error, emailtoken) => {
+                                // console.log('email tokennnnnnnnnnnnnnnnn',emailtoken.token)
+
+                                const url = `http://localhost:3000/user/confirmed/${emailtoken.token}`
+                                sendmail.mailer(url,user.email);
+                            })
+                           
+                            return callback(null, result)
                         }
                     })
                 });
@@ -110,6 +115,16 @@ userModel.prototype.login = (userdata, callback) => {
                 })
             }
         }
+    })
+}
+
+
+
+userModel.prototype.verify = (decoded, callback) => {
+    User.updateOne({"id":decoded.id},{confirmed:true},(error, data) => {
+        if(error) return callback(error)
+        // if(!data) return callback('Registration is not done.Please do it again')
+         else return callback(data)
     })
 }
 
