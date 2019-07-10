@@ -78,20 +78,16 @@ class SignupFrom extends React.Component {
                         <Typography variant="h6" className={classes.title}>
                             Chat Application
             </Typography>
+            <Button variant="contained" color="primary" className={classes.button} type="submit">
+                          Login
+                      </Button>
 
                     </Toolbar>
                 </AppBar>
-                <h2>Signup</h2>
-                <TextValidator
-                    label="Email"
-                    onChange={this.handleChange}
-                    name="email"
-                    value={formData.email}
-                    className={classes.textField}
-                    validators={['required', 'isEmail']}
-                    errorMessages={['this field is required', 'email is not valid']}
-                />
-                <br/>
+                <Typography variant="h6" className={classes.title}>
+              <h2>Signup</h2>
+            </Typography>
+            <br/>
                 <TextField
                     label="Username"
                     onChange={this.handleChange}
@@ -101,6 +97,17 @@ class SignupFrom extends React.Component {
                 >
 
                 </TextField>
+                <br/>
+                <TextValidator
+                    label="Email"
+                    onChange={this.handleChange}
+                    name="email"
+                    value={formData.email}
+                    className={classes.textField}
+                    validators={['required', 'isEmail']}
+                    errorMessages={['this field is required', 'email is not valid']}
+                />
+                
                 <br />
                 <TextValidator
                     label="Password"

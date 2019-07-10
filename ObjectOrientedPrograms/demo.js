@@ -9,7 +9,7 @@
 // }
 
 // // add data into file
-var fs = require('fs')
+// var fs = require('fs')
 // fs.writeFileSync('newfile.json', '[]', function (err) {
 //   if (err) throw err;
 //   console.log('File is created successfully.');
@@ -36,18 +36,19 @@ var fs = require('fs')
  
 // // writeFile function with filename, content and callback function
 
-json = fs.readFileSync('jsondemo.json')
-    json = JSON.parse(json)
+// json = fs.readFileSync('jsondemo.json')
+//     json = JSON.parse(json)
 
-    var item = require('readline-sync').question('\n Enter item name want to be delete:')
+//     var item = require('readline-sync').question('\n Enter item name want to be delete:')
 
-    for(var i=0;i<json.length;i++)
-    {
-        if(item == json[i].name)
-        {
-            json.splice(i,1)
-        }
-        console.log(json[i])
-    }
-    json = JSON.stringify(json)
-    fs.writeFileSync('jsondemo.json', json)
+//     for(var i=0;i<json.length;i++)
+//     {
+//         if(item == json[i].name)
+//         {
+//             json.splice(i,1)
+//         }
+//         console.log(json[i])
+//     }
+//     json = JSON.stringify(json)
+//     fs.writeFileSync('jsondemo.json', json)
+
